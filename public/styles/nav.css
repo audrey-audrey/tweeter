@@ -1,0 +1,22 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+ .navigation-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  
+  box-sizing: border-box;
+  height: 120px; 
+  width: 100vw;
+  background-color: #4056A1;
+  color:white;
+  padding:1.5em;
+}
+
+.logo {
+  font-family: 'Bungee', cursive;
+}
