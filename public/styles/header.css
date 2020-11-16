@@ -1,0 +1,29 @@
+header {
+  background-color: thistle;
+  height: 400px;
+  width: 100%;
+
+  background-color: #d8bfd8;
+  background-image: url("https://www.transparenttextures.com/patterns/transparent-square-tiles.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+/* Avatar class */
+.avatar {
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  
+}
+
+/* Name class */
+.name {
+  display         : flex;
+  justify-content : center;
+  align-items     : flex-start;
+}
+
+/* for every h2 inside the name class */
+.name > h2 {
+  margin: 0;
+}
