@@ -3,6 +3,8 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
+ /* Navigation Bar*/
  .navigation-bar {
   display: flex;
   flex-direction: row;
@@ -17,6 +19,7 @@
   padding:1.5em;
 }
 
+/* Logo within navigation bar*/ 
 .logo {
   font-family: 'Bungee', cursive;
 }
