@@ -1,4 +1,35 @@
 .new-tweet{
-  display:flex; 
-  
+  width: 100%;
 }
+
+.new-tweet > form {
+  display:flex; 
+  flex-direction: column;
+
+}
+
+textarea {
+  overflow: auto;
+  background-color: #d8bfd8;
+  background-image: url(https://www.transparenttextures.com/patterns/transparent-square-tiles.png);
+  border: none;
+  border-bottom-style: solid;
+}
+
+#buttonAndCounter {
+  display:flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+button {
+  font-family: 'Bungee';
+  background-color: #4056A1;
+  color: white;
+  border: none;
+}
+
+output {
+  font-family: 'Bungee';
+}
+
