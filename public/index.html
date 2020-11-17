@@ -17,11 +17,14 @@
     <!-- Nav CSS -->
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
 
-     <!-- Header CSS -->
-     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <!-- Header CSS -->
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
     <!-- New Tweet CSS -->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
+    <!-- Published Tweet CSS -->
+    <link rel="stylesheet" href="/styles/published-tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -47,7 +50,7 @@
       </nav>
     </div>
 
-    <header>
+    <header class="profile-header">
       <div class="avatar">
           <img src="/images/profile-hex.png"> 
       </div>
@@ -70,6 +73,21 @@
           </div>
         </form>
       </section>
+      <!-- Posted Tweet Article content here -->
+      <article class="tweet">
+        <header>
+          <div id="face-name">
+            <p>face</p>
+            <p>name</p>
+          </div>
+          <div id="handle"><p>handle</p></div>
+        </header>
+        <p>hello this is paragraph</p>
+        <footer>
+          <div id="date"><p>10 days ago</p></div>
+          <div id="icons"><p>icons</p></div>
+        </footer>
+      </article>
     </main>
   </body>
 </html>
