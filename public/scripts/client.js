@@ -82,9 +82,10 @@ $(document).ready(function () {
     console.log('Event prevented!')
 
     const tweetText = $('form').serialize();
-    const tweetTextLength = tweetText.length - 5;
+    const tweetTextLength = $('#tweet-text').val().length;
 
     if(tweetTextLength > 140) {
+      console.log(tweetTextLength)
       return alert("Tweet is too long!");
     } else if (tweetTextLength <= 0){
       return alert("Tweet is too short!");
@@ -97,7 +98,7 @@ $(document).ready(function () {
       .always(() => {
         console.log('Complete!', 
                   'tweet: ', tweetText, 
-                  'tweet: ', tweetTextLength)
+                  'length: ', tweetTextLength)
       })
     }
   })
