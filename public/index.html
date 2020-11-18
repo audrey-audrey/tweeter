@@ -26,6 +26,9 @@
     <!-- Published Tweet CSS -->
     <link rel="stylesheet" href="/styles/published-tweets.css" type="text/css" />
 
+    <!-- Published Tweet CSS -->
+    <link rel="stylesheet" href="/styles/error.css" type="text/css" />
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -64,11 +67,19 @@
   
     <!-- Page-specific (main) content here -->
     <main class="container">
+
       <!-- New Tweet content here -->
       <section class="new-tweet">
         <form action="/tweets" method="POST">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
+          <!-- Error message content here -->
+          <div class="error-container">
+            <h3 class="error">
+              <i class="fas fa-exclamation-triangle"></i>
+              <span id="error-message">Please keep characters under 140!</span>
+            </h3>
+          </div>
           <div id="buttonAndCounter">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>

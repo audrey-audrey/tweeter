@@ -76,11 +76,19 @@ $(document).ready(function () {
 
     // ajax post request
     if (tweetTextLength > 140) {
-      console.log(tweetTextLength)
-      return alert("Tweet is too long!");
+      $('#error-message').text('Too long! Please limit tweet characters to 140!')
+      $('.error-container').slideDown( "slow", function() {
+        // Animation complete.
+      });
     } else if (tweetTextLength <= 0) {
-      return alert("Tweet is too short!");
+      $('#error-message').text('The tweet cannot be empty!')
+      $('.error-container').slideDown( "slow", function() {
+        // Animation complete.
+      });
     } else {
+      $('.error-container').slideUp( "slow", function() {
+        // Animation complete.
+      });
       $.ajax({
         url: '/tweets',
         method: 'POST',

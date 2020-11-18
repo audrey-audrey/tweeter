@@ -1,0 +1,16 @@
+.error-container {
+  display: none;
+  color: #A52A2A;
+  background-color: #E9967A;
+  font-size: large;
+}
+
+.error-container .error{
+  margin: 0.5em
+}
+
+/*
+.error-container + ??{
+  display: block;
+}
+*/
