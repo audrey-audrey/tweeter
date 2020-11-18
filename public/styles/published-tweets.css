@@ -25,3 +25,18 @@ article.tweet footer {
   justify-content: space-between;
 }
 
+article.tweet footer p {
+  margin: 0;
+}
+
+article.tweet .hide {
+  display: none;
+}
+
+article.tweet:hover {
+  box-shadow: 10px 5px 5px purple;
+}
+
+article.tweet:hover .hide {
+  display: block;
+}
