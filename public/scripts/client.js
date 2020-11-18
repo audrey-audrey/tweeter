@@ -35,13 +35,21 @@
 
   // RenderTweets function
   const renderTweets = function (tweets) {
-    // loops through tweets
-    for (const tweet of tweets) {
-      // calls createTweetElement for each tweet
-      const $tweet = createTweetElement(tweet);
-      // takes return value and appends it to the tweets container
-      $('#tweets-container').append($tweet);
-    }
+    // empty the section first
+    // $('#tweets-container').empty()
+
+    // // loops through tweets
+    // for (const tweet of tweets) {
+    //   // calls createTweetElement for each tweet
+    //   const $tweet = createTweetElement(tweet);
+    //   // takes return value and appends it to the tweets container
+    //   $('#tweets-container').prepend($tweet);
+    // }
+
+    // alternatively (but this one doesn't show the dummy data)
+    const tweet = tweets.pop()
+    const $tweet = createTweetElement(tweet);
+    $('#tweets-container').prepend($tweet);
   }
 
   // CreateTweet function
@@ -75,6 +83,15 @@
 
 // });
 
+        // ajax fetch post request
+        const loadTweets = () => {
+          $.ajax({url: '/tweets', method: 'GET'})
+          .then((res) => {
+            renderTweets(res);
+          })
+        }
+
+
 $(document).ready(function () {
 
   $('form').on('submit', event => {
@@ -84,6 +101,7 @@ $(document).ready(function () {
     const tweetText = $('form').serialize();
     const tweetTextLength = $('#tweet-text').val().length;
 
+    // ajax post request
     if(tweetTextLength > 140) {
       console.log(tweetTextLength)
       return alert("Tweet is too long!");
@@ -95,21 +113,15 @@ $(document).ready(function () {
         method: 'POST',
         data: tweetText
       })
+      // fetch post request
+      .then(() => loadTweets())
       .always(() => {
         console.log('Complete!', 
                   'tweet: ', tweetText, 
                   'length: ', tweetTextLength)
       })
     }
+
   })
-
-  const loadTweets = () => {
-    $.ajax({url: '/tweets', method: 'GET'})
-    .then((res) => {
-      renderTweets(res);
-    })
-  }
-
-  loadTweets()
 
 });
