@@ -5,5 +5,52 @@
  */
 $(document).ready(function() {
   // --- our code goes here ---
-  console.log(document);
+  // Test / driver code (temporary). Eventually will get this from the server.
+const tweetData = {
+  "user": {
+    "name": "Newton",
+    "avatars": "https://i.imgur.com/73hZDYK.png",
+      "handle": "@SirIsaac"
+    },
+  "content": {
+      "text": "If I have seen further it is by standing on the shoulders of giants"
+    },
+  "created_at": 1461116232227
+}
+
+
+const createTweetElement = function(tweet) {
+  /* Your code for creating the tweet element */
+  let $tweet = `
+  <article class="tweet">
+        <header>
+          <div id="face-name">
+            <img src=${tweet.user.avatars}>
+            <p>${tweet.user.name}</p>
+          </div>
+          <div class="hide" id="handle"><p>${tweet.user.handle}</p></div>
+        </header>
+        <p>${tweet.content.text}</p>
+        <footer>
+          <span id="date"><p>${tweet.created_at}</p></span>
+          <span id="icons">
+            <i class="fas fa-flag"></i>
+            <i class="fas fa-retweet"></i>
+            <i class="fas fa-heart"></i>
+          </span>
+        </footer>
+      </article>
+  `
+  
+  return $tweet;
+}
+
+
+const $tweet = createTweetElement(tweetData);
+// $(`<article class="tweet">Hello world i'm adding this here</article>`);
+
+// Test / driver code (temporary)
+console.log($tweet); // to see what it looks like
+$('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+
 });
