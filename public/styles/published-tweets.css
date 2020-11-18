@@ -27,6 +27,7 @@ article.tweet header #face-name img {
 article.tweet > p {
   border-bottom-style: solid ;
   margin: 1em;
+  overflow-wrap: anywhere;
 }
 
 article.tweet footer {

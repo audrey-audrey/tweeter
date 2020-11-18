@@ -81,14 +81,25 @@ $(document).ready(function () {
     event.preventDefault()
     console.log('Event prevented!')
 
-    $.ajax({
-      url: '/tweets',
-      method: 'POST',
-      data: $('form').serialize()
-    })
-    .always(() => {
-      console.log('Complete!', $('form').serialize())
-    })
+    const tweetText = $('form').serialize();
+    const tweetTextLength = tweetText.length - 5;
+
+    if(tweetTextLength > 140) {
+      return alert("Tweet is too long!");
+    } else if (tweetTextLength <= 0){
+      return alert("Tweet is too short!");
+    } else {
+      $.ajax({
+        url: '/tweets',
+        method: 'POST',
+        data: tweetText
+      })
+      .always(() => {
+        console.log('Complete!', 
+                  'tweet: ', tweetText, 
+                  'tweet: ', tweetTextLength)
+      })
+    }
   })
 
   const loadTweets = () => {
