@@ -3,70 +3,48 @@
 //  * jQuery is already loaded
 //  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 //  */
-// $(document).ready(function () {
-//   // --- our code goes here ---
-//   // Test / driver code (temporary). Eventually will get this from the server.
-//   // Fake data taken from initial-tweets.json
-//   const data = [
-//     {
-//       "user": {
-//         "name": "Newton",
-//         "avatars": "https://i.imgur.com/73hZDYK.png"
-//         ,
-//         "handle": "@SirIsaac"
-//       },
-//       "content": {
-//         "text": "If I have seen further it is by standing on the shoulders of giants"
-//       },
-//       "created_at": 1461116232227
-//     },
-//     {
-//       "user": {
-//         "name": "Descartes",
-//         "avatars": "https://i.imgur.com/nlhLi3I.png",
-//         "handle": "@rd"
-//       },
-//       "content": {
-//         "text": "Je pense , donc je suis"
-//       },
-//       "created_at": 1461113959088
-//     }
-//   ]
 
-  // RenderTweets function
-  const renderTweets = function (tweets) {
-    // empty the section first
-    // $('#tweets-container').empty()
+// RenderTweets function
+const renderTweets = function (tweets) {
+  // empty the section first
+  // $('#tweets-container').empty()
 
-    // // loops through tweets
-    // for (const tweet of tweets) {
-    //   // calls createTweetElement for each tweet
-    //   const $tweet = createTweetElement(tweet);
-    //   // takes return value and appends it to the tweets container
-    //   $('#tweets-container').prepend($tweet);
-    // }
+  // // loops through tweets
+  // for (const tweet of tweets) {
+  //   // calls createTweetElement for each tweet
+  //   const $tweet = createTweetElement(tweet);
+  //   // takes return value and appends it to the tweets container
+  //   $('#tweets-container').prepend($tweet);
+  // }
 
-    // alternatively (but this one doesn't show the dummy data)
-    const tweet = tweets.pop()
-    const $tweet = createTweetElement(tweet);
-    $('#tweets-container').prepend($tweet);
-  }
+  // alternatively (but this one doesn't show the dummy data)
+  const tweet = tweets.pop()
+  const $tweet = createTweetElement(tweet);
+  $('#tweets-container').prepend($tweet);
+}
 
-  // CreateTweet function
-  const createTweetElement = function (tweet) {
-    /* Your code for creating the tweet element */
-    let $tweet = `
+// Escape function to escape unsafe characters
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
+// CreateTweet function
+const createTweetElement = function (tweet) {
+  /* Your code for creating the tweet element */
+  let $tweet = `
   <article class="tweet">
         <header>
           <div id="face-name">
-            <img src=${tweet.user.avatars}>
-            <p>${tweet.user.name}</p>
+            <img src=${escape(tweet.user.avatars)}>
+            <p>${escape(tweet.user.name)}</p>
           </div>
-          <div class="hide" id="handle"><p>${tweet.user.handle}</p></div>
+          <div class="hide" id="handle"><p>${escape(tweet.user.handle)}</p></div>
         </header>
-        <p>${tweet.content.text}</p>
+        <p>${escape(tweet.content.text)}</p>
         <footer>
-          <span id="date"><p>${tweet.created_at}</p></span>
+          <span id="date"><p>${escape(tweet.created_at)}</p></span>
           <span id="icons">
             <i class="fas fa-flag"></i>
             <i class="fas fa-retweet"></i>
@@ -76,21 +54,16 @@
       </article>
   `
 
-    return $tweet;
-  }
+  return $tweet;
+}
 
-//   renderTweets(data);
-
-// });
-
-        // ajax fetch post request
-        const loadTweets = () => {
-          $.ajax({url: '/tweets', method: 'GET'})
-          .then((res) => {
-            renderTweets(res);
-          })
-        }
-
+// ajax fetch post request
+const loadTweets = () => {
+  $.ajax({ url: '/tweets', method: 'GET' })
+    .then((res) => {
+      renderTweets(res);
+    })
+}
 
 $(document).ready(function () {
 
@@ -102,10 +75,10 @@ $(document).ready(function () {
     const tweetTextLength = $('#tweet-text').val().length;
 
     // ajax post request
-    if(tweetTextLength > 140) {
+    if (tweetTextLength > 140) {
       console.log(tweetTextLength)
       return alert("Tweet is too long!");
-    } else if (tweetTextLength <= 0){
+    } else if (tweetTextLength <= 0) {
       return alert("Tweet is too short!");
     } else {
       $.ajax({
@@ -113,13 +86,13 @@ $(document).ready(function () {
         method: 'POST',
         data: tweetText
       })
-      // fetch post request
-      .then(() => loadTweets())
-      .always(() => {
-        console.log('Complete!', 
-                  'tweet: ', tweetText, 
-                  'length: ', tweetTextLength)
-      })
+        // fetch post request
+        .then(() => loadTweets())
+        .always(() => {
+          console.log('Complete!',
+            'tweet: ', tweetText,
+            'length: ', tweetTextLength)
+        })
     }
 
   })

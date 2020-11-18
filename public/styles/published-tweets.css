@@ -42,6 +42,11 @@ article.tweet footer p {
   margin: 0;
 }
 
+article.tweet footer #icons {
+  margin: 0;
+  color: purple;
+}
+
 article.tweet .hide {
   display: none;
 }
