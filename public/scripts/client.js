@@ -44,8 +44,6 @@ $(document).ready(function () {
     }
   }
 
-
-
   // CreateTweet function
   const createTweetElement = function (tweet) {
     /* Your code for creating the tweet element */
