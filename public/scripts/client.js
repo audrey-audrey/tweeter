@@ -1,9 +1,4 @@
-// /*
-//  * Client-side JS logic goes here
-//  * jQuery is already loaded
-//  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
-//  */
-
+// HELPER FUNCTIONS
 // RenderTweets function
 const renderTweets = function (tweets) {
   const tweet = tweets.pop()
@@ -12,7 +7,7 @@ const renderTweets = function (tweets) {
 }
 
 // Escape function to escape unsafe characters
-const escape =  function(str) {
+const escape = function (str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -43,7 +38,7 @@ const createTweetElement = function (tweet) {
   return $tweet;
 }
 
-// ajax fetch post request
+// ajax fetch post (get) request
 const loadTweets = () => {
   $.ajax({ url: '/tweets', method: 'GET' })
     .then((res) => {
@@ -51,7 +46,38 @@ const loadTweets = () => {
     })
 }
 
-// const postTweet = ()
+// ajax post (post) request
+const postTweet = (tweet) => {
+  $('.error-container').slideUp("slow", function () {
+    // Animation complete.
+  });
+  $("#tweet-text").val('')
+  // post request
+
+  $.ajax({
+    url: '/tweets',
+    method: 'POST',
+    data: tweet
+  })
+    // fetch post request
+    .then(() => {
+      loadTweets();
+    })
+}
+
+// warning error 
+const warnUser = (message) => {
+  $('#error-message').text(message)
+  $('.error-container').slideDown("slow", function () {
+    // Animation complete.
+  });
+}
+
+// /*
+//  * Client-side JS logic goes here
+//  * jQuery is already loaded
+//  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
+//  */
 
 $(document).ready(function () {
 
@@ -64,35 +90,11 @@ $(document).ready(function () {
 
     // ajax post request
     if (tweetTextLength > 140) {
-      $('#error-message').text('Too long! Please limit tweet characters to 140!')
-      $('.error-container').slideDown( "slow", function() {
-        // Animation complete.
-      });
+      warnUser('Too long! Please limit tweet characters to 140!');
     } else if (tweetTextLength <= 0) {
-      $('#error-message').text('The tweet cannot be empty!')
-      $('.error-container').slideDown( "slow", function() {
-        // Animation complete.
-      });
+      warnUser('The tweet cannot be empty!');
     } else {
-      $('.error-container').slideUp( "slow", function() {
-        // Animation complete.
-      });
-      $("#tweet-text").val('')
-      $.ajax({
-        url: '/tweets',
-        method: 'POST',
-        data: tweetText
-      })
-        // fetch post request
-        .then(() => {
-          loadTweets();
-       
-        })
-        .always(() => {
-          console.log('Complete!',
-            'tweet: ', tweetText,
-            'length: ', tweetTextLength)
-        })
+      postTweet(tweetText);
     }
 
   })
