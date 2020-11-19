@@ -70,44 +70,48 @@
       </nav>
     </div>
 
-    <header class="profile-header">
-      <div class="avatar">
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div class="name">
-          <h2>Your Name</h2>
-      </div>
-    </header>
+     <!-- Header and Main content -->
+    <div class="header-main">
+      <header class="profile-header">
+        <div class="avatar">
+            <img src="/images/profile-hex.png"> 
+        </div>
+        <br>
+        <div class="name">
+            <h2>Your Name</h2>
+        </div>
+      </header>
+    
+      <!-- Page-specific (main) content here -->
+      <main class="container">
   
-    <!-- Page-specific (main) content here -->
-    <main class="container">
+        <!-- New Tweet content here -->
+        <section class="new-tweet">
+          <form action="/tweets" method="POST">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <!-- Error message content here -->
+            <div class="error-container">
+              <h3 class="error">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span id="error-message">Please keep characters under 140!</span>
+              </h3>
+            </div>
+            <div id="buttonAndCounter">
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+  
+        <!-- Tweets Container -->
+        <div id="tweets-container"></div>
+  
+        <!-- Tweets Container -->
+        <button id="scroll-button"><i class="fas fa-chevron-circle-up"></i></button>
+        
+      </main>
 
-      <!-- New Tweet content here -->
-      <section class="new-tweet">
-        <form action="/tweets" method="POST">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <!-- Error message content here -->
-          <div class="error-container">
-            <h3 class="error">
-              <i class="fas fa-exclamation-triangle"></i>
-              <span id="error-message">Please keep characters under 140!</span>
-            </h3>
-          </div>
-          <div id="buttonAndCounter">
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
-
-      <!-- Tweets Container -->
-      <div id="tweets-container"></div>
-
-      <!-- Tweets Container -->
-      <button id="scroll-button"><i class="fas fa-chevron-circle-up"></i></button>
-      
-    </main>
+    </div>
   </body>
 </html>

@@ -92,7 +92,7 @@ const warnUser = (message) => {
 
 $(document).ready(function () {
   // Render two dummy tweets 
-  loadTweets(renderDummyTweets)
+  loadTweets(renderDummyTweets);
 
   // Tweet form!
   $('form').on('submit', event => {

@@ -30,11 +30,36 @@ main {
   display: flex;
   flex-direction: column;
   /* margin: 0 auto; */
-  width: 90%;
   background-color: #d8bfd8;
   background-image: url("https://www.transparenttextures.com/patterns/transparent-square-tiles.png");
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+.header-main {
+  width: 90vw;
+}
+
+@media only screen and (min-width: 1024px) {
+  .header-main {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+  }
+
+  .avatar {
+    margin-top: 175px;
+  }
+
+  .header-main header {
+    flex-grow: 1;
+  }
+
+  .header-main main {
+    flex-grow: 3;
+    margin-right: 5vw;
+    margin-top: 175px;
+  }
+}
+
+
+
+
