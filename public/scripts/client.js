@@ -1,4 +1,15 @@
 // HELPER FUNCTIONS
+// Dummy tweets => initial hardcoded data from /tweets
+const renderDummyTweets = function (tweets) {
+    // loops through tweets
+    for (const tweet of tweets) {
+      // calls createTweetElement for each tweet
+      const $tweet = createTweetElement(tweet);
+      // takes return value and appends it to the tweets container
+      $('#tweets-container').append($tweet);
+    }
+}
+
 // RenderTweets function
 const renderTweets = function (tweets) {
   const tweet = tweets.pop()
@@ -39,10 +50,10 @@ const createTweetElement = function (tweet) {
 }
 
 // ajax fetch post (get) request
-const loadTweets = () => {
+const loadTweets = (callback) => {
   $.ajax({ url: '/tweets', method: 'GET' })
     .then((res) => {
-      renderTweets(res);
+      callback(res);
     })
 }
 
@@ -61,7 +72,7 @@ const postTweet = (tweet) => {
   })
     // fetch post request
     .then(() => {
-      loadTweets();
+      loadTweets(renderTweets);
     })
 }
 
@@ -80,6 +91,9 @@ const warnUser = (message) => {
 //  */
 
 $(document).ready(function () {
+  // Render two dummy tweets 
+  loadTweets(renderDummyTweets)
+
   // Tweet form!
   $('form').on('submit', event => {
     event.preventDefault()
