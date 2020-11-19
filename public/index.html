@@ -29,6 +29,9 @@
     <!-- Published Tweet CSS -->
     <link rel="stylesheet" href="/styles/error.css" type="text/css" />
 
+    <!-- Scroll to Top Button CSS -->
+    <link rel="stylesheet" href="/styles/scroll-to-top.css" type="text/css" />
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -37,6 +40,9 @@
 
     <!-- Character Counter JS -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+    <!-- Toggle Buttons JS -->
+    <script type="text/javascript" src="/scripts/composer.js"></script>
 
     <!-- External Icons -->
     <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" data-auto-replace-svg></script>
@@ -55,7 +61,7 @@
           <span><b>Write</b> a new tweet</span>
           <!--Arrow animation sourced from https://codepen.io/bisaillonyannick/pen/pvZeGg-->
           <div class="arrow bounce">
-            <a class="fas fa-chevron-down" href="#"></a>
+            <a class="fas fa-angle-double-down" href="#"></a>
           </div>
         </button>
       </nav>
@@ -95,6 +101,9 @@
 
       <!-- Tweets Container -->
       <div id="tweets-container"></div>
+
+      <!-- Tweets Container -->
+      <button id="scroll-button"><i class="fas fa-chevron-circle-up"></i></button>
       
     </main>
   </body>

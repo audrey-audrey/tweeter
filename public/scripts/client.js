@@ -80,22 +80,12 @@ const warnUser = (message) => {
 //  */
 
 $(document).ready(function () {
-  // Compose new tweet!
-  $('.compose').on('click', event => {
-    // Toggle new-tweet container up or down
-    $('.new-tweet').slideToggle("fast", function () {
-      // Animation complete.
-    });
-    // Focus on textarea so user can type right away
-    $('#tweet-text').focus();
-  })
-
   // Tweet form!
   $('form').on('submit', event => {
     event.preventDefault()
     console.log('Tweet submitted!')
 
-    const tweetText = $('form').serialize();
+    const tweet = $('form').serialize();
     const tweetTextLength = $('#tweet-text').val().length;
 
     // Validation
@@ -104,9 +94,7 @@ $(document).ready(function () {
     } else if (tweetTextLength <= 0) {
       warnUser('The tweet cannot be empty!');
     } else {
-      postTweet(tweetText);
+      postTweet(tweet);
     }
-
   })
-
 });

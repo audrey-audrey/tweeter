@@ -23,12 +23,6 @@ header.profile-header {
 }
 
 /* Animation sourced from https://codepen.io/bisaillonyannick/pen/pvZeGg */
-@bg: #2d2d37;
-@primary: #fd6b21;
-
-body { background: @bg;}
-a { color: white; text-decoration: none; }
-
 .arrow {
   text-align: center;
   margin: 5% 0;
