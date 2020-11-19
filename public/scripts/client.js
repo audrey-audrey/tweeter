@@ -6,7 +6,7 @@ const renderDummyTweets = function (tweets) {
       // calls createTweetElement for each tweet
       const $tweet = createTweetElement(tweet);
       // takes return value and appends it to the tweets container
-      $('#tweets-container').append($tweet);
+      $('#tweets-container').prepend($tweet);
     }
 }
 
@@ -62,9 +62,11 @@ const postTweet = (tweet) => {
   $('.error-container').slideUp("fast", function () {
     // Animation complete.
   });
-  $("#tweet-text").val('')
-  // post request
 
+  // Clear text area
+  $("#tweet-text").val('')
+  $(".counter").val(140);
+  // post request
   $.ajax({
     url: '/tweets',
     method: 'POST',

@@ -21,7 +21,10 @@ article.tweet header #face-name {
 article.tweet header #face-name img {
   display: flex;
   flex-direction: row;
-  padding-right: 0.5em
+  padding-right: 0.5em;
+
+  height: 60px;
+  width: auto;
 }
 
 article.tweet > p {
@@ -45,6 +48,8 @@ article.tweet footer p {
 article.tweet footer #icons {
   margin: 0;
   color: purple;
+
+  font-size: 20px;
 }
 
 article.tweet .hide {

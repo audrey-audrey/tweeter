@@ -3,6 +3,11 @@
   width: 100%;
 }
 
+#face-name img {
+  height: 60px;
+  width: auto;
+}
+
 .new-tweet > form {
   display:flex; 
   flex-direction: column;

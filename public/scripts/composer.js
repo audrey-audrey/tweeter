@@ -12,8 +12,11 @@ $(document).ready(function () {
 
   // Scroll to top of page!
   // if scroll down, show button
+
   $(window).scroll(function () {
     if ($(this).scrollTop()) {
+      // #scroll-button = scroll button ID
+      // .compose = write a new tweet button ID
       $('#scroll-button:hidden').stop(true, true).fadeIn();
       $('.compose').fadeOut()
     } else {

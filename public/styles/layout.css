@@ -45,18 +45,22 @@ main {
     width: 100vw;
   }
 
-  .avatar {
-    margin-top: 175px;
+  .profile-header {
+    background-color: teal;
+    margin : auto
   }
 
-  .header-main header {
-    flex-grow: 1;
+  .avatar {
+    display: flex;
+    justify-content: center;
+    margin-top: 175px;
+    background-color: teal;
   }
 
   .header-main main {
-    flex-grow: 3;
-    margin-right: 5vw;
     margin-top: 175px;
+    margin-left: 0;
+    margin-right: auto;
   }
 }
 
