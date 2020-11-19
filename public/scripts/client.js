@@ -6,18 +6,6 @@
 
 // RenderTweets function
 const renderTweets = function (tweets) {
-  // empty the section first
-  // $('#tweets-container').empty()
-
-  // // loops through tweets
-  // for (const tweet of tweets) {
-  //   // calls createTweetElement for each tweet
-  //   const $tweet = createTweetElement(tweet);
-  //   // takes return value and appends it to the tweets container
-  //   $('#tweets-container').prepend($tweet);
-  // }
-
-  // alternatively (but this one doesn't show the dummy data)
   const tweet = tweets.pop()
   const $tweet = createTweetElement(tweet);
   $('#tweets-container').prepend($tweet);
@@ -32,7 +20,6 @@ const escape =  function(str) {
 
 // CreateTweet function
 const createTweetElement = function (tweet) {
-  /* Your code for creating the tweet element */
   let $tweet = `
   <article class="tweet">
         <header>
@@ -53,7 +40,6 @@ const createTweetElement = function (tweet) {
         </footer>
       </article>
   `
-
   return $tweet;
 }
 
@@ -64,6 +50,8 @@ const loadTweets = () => {
       renderTweets(res);
     })
 }
+
+// const postTweet = ()
 
 $(document).ready(function () {
 
@@ -89,13 +77,17 @@ $(document).ready(function () {
       $('.error-container').slideUp( "slow", function() {
         // Animation complete.
       });
+      $("#tweet-text").val('')
       $.ajax({
         url: '/tweets',
         method: 'POST',
         data: tweetText
       })
         // fetch post request
-        .then(() => loadTweets())
+        .then(() => {
+          loadTweets();
+       
+        })
         .always(() => {
           console.log('Complete!',
             'tweet: ', tweetText,
