@@ -48,7 +48,7 @@ const loadTweets = () => {
 
 // ajax post (post) request
 const postTweet = (tweet) => {
-  $('.error-container').slideUp("slow", function () {
+  $('.error-container').slideUp("fast", function () {
     // Animation complete.
   });
   $("#tweet-text").val('')
@@ -68,7 +68,7 @@ const postTweet = (tweet) => {
 // warning error 
 const warnUser = (message) => {
   $('#error-message').text(message)
-  $('.error-container').slideDown("slow", function () {
+  $('.error-container').slideDown("fast", function () {
     // Animation complete.
   });
 }
@@ -80,15 +80,25 @@ const warnUser = (message) => {
 //  */
 
 $(document).ready(function () {
+  // Compose new tweet!
+  $('.compose').on('click', event => {
+    // Toggle new-tweet container up or down
+    $('.new-tweet').slideToggle("fast", function () {
+      // Animation complete.
+    });
+    // Focus on textarea so user can type right away
+    $('#tweet-text').focus();
+  })
 
+  // Tweet form!
   $('form').on('submit', event => {
     event.preventDefault()
-    console.log('Event prevented!')
+    console.log('Tweet submitted!')
 
     const tweetText = $('form').serialize();
     const tweetTextLength = $('#tweet-text').val().length;
 
-    // ajax post request
+    // Validation
     if (tweetTextLength > 140) {
       warnUser('Too long! Please limit tweet characters to 140!');
     } else if (tweetTextLength <= 0) {

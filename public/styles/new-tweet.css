@@ -1,11 +1,11 @@
 .new-tweet{
+  display: none;
   width: 100%;
 }
 
 .new-tweet > form {
   display:flex; 
   flex-direction: column;
-
 }
 
 textarea {
@@ -14,6 +14,10 @@ textarea {
   background-image: url(https://www.transparenttextures.com/patterns/transparent-square-tiles.png);
   border: none;
   border-bottom-style: solid;
+}
+
+textarea:focus {
+  outline: none;
 }
 
 #buttonAndCounter {
