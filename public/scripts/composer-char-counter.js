@@ -1,26 +1,18 @@
-// jQuery!
-
+// Character count!
 $(document).ready(function() {
-  // --- our code goes here ---
-
-  // event handler for form in new-tweet section
-
-  $('.new-tweet').on('input', function () {
+  $('.new-tweet').on('input', function() {
     const tweetLength = $(this).find('#tweet-text').val().length;
     const remainingChar = 140 - tweetLength;
 
-    // Alternatively, const counter = $(this).children().children().find(".counter")
-    const counter = $(this).find(".counter")
+    const counter = $(this).find(".counter");
     // Override the text with remainingChar
-    counter.text(remainingChar)
+    counter.text(remainingChar);
   
-    // if remainingchar is less than 0, add another class
-    if(remainingChar < 0) {
+    // if remainingchar is negative, the tweet is too long!
+    if (remainingChar < 0) {
       counter.addClass("tweetTooLong");
     } else {
-      counter.removeClass("tweetTooLong")
+      counter.removeClass("tweetTooLong");
     }
-  })
-
-
+  });
 });

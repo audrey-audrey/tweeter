@@ -1,6 +1,6 @@
 // HELPER FUNCTIONS for client.js
 // Dummy tweets => initial hardcoded data from /tweets
-const renderDummyTweets = function (tweets) {
+const renderDummyTweets = function(tweets) {
   // loops through tweets
   for (const tweet of tweets) {
     // calls createTweetElement for each tweet
@@ -8,25 +8,25 @@ const renderDummyTweets = function (tweets) {
     // takes return value and appends it to the tweets container
     $('#tweets-container').prepend($tweet);
   }
-}
+};
 
 // RenderTweets function
-const renderTweets = function (tweets) {
-const tweet = tweets.pop()
-const $tweet = createTweetElement(tweet);
-$('#tweets-container').prepend($tweet);
-}
+const renderTweets = function(tweets) {
+  const tweet = tweets.pop();
+  const $tweet = createTweetElement(tweet);
+  $('#tweets-container').prepend($tweet);
+};
 
 // Escape function to escape unsafe characters
-const escape = function (str) {
-let div = document.createElement('div');
-div.appendChild(document.createTextNode(str));
-return div.innerHTML;
-}
+const escape = function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
 // CreateTweet function
-const createTweetElement = function (tweet) {
-let $tweet = `
+const createTweetElement = function(tweet) {
+  let $tweet = `
 <article class="tweet">
       <header>
         <div id="face-name">
@@ -45,43 +45,40 @@ let $tweet = `
         </span>
       </footer>
     </article>
-`
-return $tweet;
-}
+`;
+  return $tweet;
+};
 
 // ajax fetch post (get) request
 const loadTweets = (callback) => {
-$.ajax({ url: '/tweets', method: 'GET' })
-  .then((res) => {
-    callback(res);
-  })
-}
+  $.ajax({ url: '/tweets', method: 'GET' })
+    .then((res) => {
+      callback(res);
+    });
+};
 
 // ajax post (post) request
 const postTweet = (tweet) => {
-$('.error-container').slideUp("fast", function () {
-  // Animation complete.
-});
+  $('.error-container').slideUp("fast");
 
-// Clear text area
-$("#tweet-text").val('')
-$(".counter").val(140);
-// post request
-$.ajax({
-  url: '/tweets',
-  method: 'POST',
-  data: tweet
-})
-  // fetch post request
-  .then(() => {
-    loadTweets(renderTweets);
+  // Resets text area
+  $("#tweet-text").val('');
+  $(".counter").val(140);
+
+  // post request
+  $.ajax({
+    url: '/tweets',
+    method: 'POST',
+    data: tweet
   })
-}
+    // fetch post request
+    .then(() => {
+      loadTweets(renderTweets);
+    });
+};
 
-// warning error 
+// Warning error
 const warnUser = (message) => {
-$('#error-message').text(message)
-$('.error-container').slideDown("fast", function () {
-  // Animation complete.
-});
-}
+  $('#error-message').text(message);
+  $('.error-container').slideDown("fast");
+};

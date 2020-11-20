@@ -1,28 +1,24 @@
-// /*
 //  * Client-side JS logic goes here
-//  * jQuery is already loaded
-//  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
-//  */
-
-$(document).ready(function () {
-  // Render two dummy tweets 
+$(document).ready(function() {
+  // Render two dummy tweets
   loadTweets(renderDummyTweets);
 
-  // Tweet form!
+  // When user submits form: 
   $('form').on('submit', event => {
-    event.preventDefault()
-    console.log('Tweet submitted!')
+    // Prevent default
+    event.preventDefault();
 
+    // Serialize form to get data
     const tweet = $('form').serialize();
-    const tweetTextLength = $('#tweet-text').val().length;
+    const tweetLength = $('#tweet-text').val().length;
 
     // Validation
-    if (tweetTextLength > 140) {
-      warnUser('Too long! Please limit tweet characters to 140!');
-    } else if (tweetTextLength <= 0) {
-      warnUser('The tweet cannot be empty!');
+    if (tweetLength > 140) {
+      warnUser('Oops!! Please keep tweet under 140 characters!');
+    } else if (tweetLength <= 0) {
+      warnUser('Oops!! The tweet cannot be empty!');
     } else {
       postTweet(tweet);
     }
-  })
+  });
 });
