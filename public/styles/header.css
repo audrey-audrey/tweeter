@@ -23,7 +23,6 @@ header.profile-header {
 
 @media only screen and (min-width: 1024px) {
   header.profile-header {
-    background-color: #fe938c;
     margin: 0;
     padding-top: 0px;
     padding-bottom: 0px;

@@ -4,6 +4,10 @@
   margin:auto
 }
 
+.new-tweet label {
+  margin-top: 24px;
+}
+
 .new-tweet > form {
   display:flex; 
   flex-direction: column;
@@ -51,6 +55,10 @@ output {
 @media only screen and (min-width: 1024px) {
   .new-tweet {
     width: 50vw;
+  }
+
+  .new-tweet label {
+    margin-top: 0;
   }
 }
 

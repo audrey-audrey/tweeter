@@ -28,6 +28,7 @@
 /* Logo within navigation bar*/ 
 .logo {
   font-family: 'Bungee', cursive;
+  font-size: 36px;
 }
 
 .compose {
@@ -86,6 +87,10 @@
   }
 
   .compose {
-    background-color: #48a9a6;
+    background-color: #fe938c;
+  }
+
+  .arrow {
+    color: #48a9a6;
   }
 }
