@@ -55,6 +55,7 @@ output {
 @media only screen and (min-width: 1024px) {
   .new-tweet {
     width: 50vw;
+    margin-bottom: 1em;
   }
 
   .new-tweet label {
