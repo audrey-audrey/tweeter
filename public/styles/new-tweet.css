@@ -3,11 +3,6 @@
   width: 100%;
 }
 
-#face-name img {
-  height: 60px;
-  width: auto;
-}
-
 .new-tweet > form {
   display:flex; 
   flex-direction: column;
@@ -15,8 +10,9 @@
 
 textarea {
   overflow: auto;
-  background-color: #d8bfd8;
-  background-image: url(https://www.transparenttextures.com/patterns/transparent-square-tiles.png);
+  background-color: #f4f7f5;
+  background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   border: none;
   border-bottom-style: solid;
 }
@@ -30,6 +26,10 @@ textarea:focus {
   justify-content: space-between;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+#buttonAndCounter button {
+  width:120px;
 }
 
 button {
