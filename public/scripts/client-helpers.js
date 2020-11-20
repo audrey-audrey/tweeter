@@ -1,11 +1,8 @@
 // HELPER FUNCTIONS for client.js
 // Dummy tweets => initial hardcoded data from /tweets
 const renderDummyTweets = function(tweets) {
-  // loops through tweets
   for (const tweet of tweets) {
-    // calls createTweetElement for each tweet
     const $tweet = createTweetElement(tweet);
-    // takes return value and appends it to the tweets container
     $('#tweets-container').prepend($tweet);
   }
 };
@@ -57,8 +54,9 @@ const loadTweets = (callback) => {
     });
 };
 
-// ajax post (post) request
+// Post tweet to page
 const postTweet = (tweet) => {
+  // If error warning present, slide back up
   $('.error-container').slideUp("fast");
 
   // Resets text area
@@ -71,7 +69,7 @@ const postTweet = (tweet) => {
     method: 'POST',
     data: tweet
   })
-    // fetch post request
+    // after post request completed, then perform get request to render tweet
     .then(() => {
       loadTweets(renderTweets);
     });

@@ -4,6 +4,8 @@
  * Do not modify these two selectors, please
  */
 
+ /* NAVIGATION BAR - contains tweeter logo and compose button */
+
  .navigation-bar {
   position        : fixed;
   top             : 0;
@@ -72,15 +74,11 @@
 
 @media only screen and (min-width: 1024px) {
   .navigation-bar {
-    background-color: #fe938c;
-    background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
+    background-color: #48a9a6;
   }
 
   .compose {
-    background-color: #fe938c;
-  }
-
-  .arrow {
-    color: #48a9a6;
+    background-color: #48a9a6;
+    background      : none;
   }
 }
