@@ -2,7 +2,8 @@ article.tweet {
   border-style: solid;
   margin-top:1em;
   margin-bottom: 1em;
-
+  margin-left: 5vw;
+  margin-right: 5vw;
 }
 
 article.tweet header {
@@ -63,4 +64,10 @@ article.tweet:hover {
 article.tweet:hover .hide {
   display: block;
   color: #48a9a6;
+}
+
+@media only screen and (min-width: 1024px) {
+  article.tweet {
+    width: 50vw;
+  }
 }

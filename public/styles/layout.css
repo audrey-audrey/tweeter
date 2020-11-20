@@ -36,10 +36,6 @@ main {
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
-.header-main {
-  width: 90vw;
-}
-
 @media only screen and (min-width: 1024px) {
   .header-main {
     display: flex;

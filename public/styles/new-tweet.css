@@ -1,6 +1,7 @@
 .new-tweet{
   display: none;
-  width: 100%;
+  width: 90%;
+  margin:auto
 }
 
 .new-tweet > form {
@@ -45,5 +46,11 @@ output {
 
 .tweetTooLong {
   color: red;
+}
+
+@media only screen and (min-width: 1024px) {
+  .new-tweet {
+    width: 50vw;
+  }
 }
 
