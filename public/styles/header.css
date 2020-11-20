@@ -1,30 +1,28 @@
 header.profile-header {
-  width: 100vw;
-  padding-top: 120px;
-  padding-bottom: 120px;
-  height: 520px;
+  width           : 100vw;
+  height          : 520px;
+  padding-top     : 120px;
+  padding-bottom  : 120px;
   background-color: #4056A1;
   background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
-/* Name class */
 .name {
-  color:white;
   display         : flex;
   justify-content : center;
   align-items     : flex-start;
+  color           : white;
 }
 
-/* for every h2 inside the name class */
 .name > h2 {
   margin: 0;
 }
 
+/* DESKTOP MODE */
 @media only screen and (min-width: 1024px) {
   header.profile-header {
-    margin: 0;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    margin        : 0;
+    padding-top   : 0;
+    padding-bottom: 0;
   }
 }

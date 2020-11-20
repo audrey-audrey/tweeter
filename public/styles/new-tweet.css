@@ -1,7 +1,7 @@
 .new-tweet{
-  display: none;
-  width: 90%;
-  margin:auto
+  display : none;
+  width   : 90%;
+  margin  :auto
 }
 
 .new-tweet label {
@@ -9,17 +9,16 @@
 }
 
 .new-tweet > form {
-  display:flex; 
+  display       :flex; 
   flex-direction: column;
 }
 
 textarea {
-  overflow: auto;
-  background-color: #f4f7f5;
-  background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-  border: none;
-  border-bottom-style: solid;
+  overflow            : auto;
+  background-color    : #f4f7f5;
+  background-image    : url("https://www.transparenttextures.com/patterns/60-lines.png");
+  border              : none;
+  border-bottom-style : solid;
 }
 
 textarea:focus {
@@ -27,25 +26,25 @@ textarea:focus {
 }
 
 #buttonAndCounter {
-  display:flex;
-  justify-content: space-between;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  display         : flex;
+  justify-content : space-between;
+  padding-top     : 10px;
+  padding-bottom  : 10px;
 }
 
 #buttonAndCounter button {
-  width:120px;
+  width : 120px;
 }
 
 button {
-  font-family: 'Bungee';
+  font-family     : 'Bungee';
   background-color: #4056A1;
-  color: white;
-  border: none;
+  color           : white;
+  border          : none;
 }
 
 output {
-  font-family: 'Bungee';
+  font-family : 'Bungee';
 }
 
 .tweetTooLong {
@@ -54,8 +53,8 @@ output {
 
 @media only screen and (min-width: 1024px) {
   .new-tweet {
-    width: 50vw;
-    margin-bottom: 1em;
+    width         : 50vw;
+    margin-bottom : 1em;
   }
 
   .new-tweet label {

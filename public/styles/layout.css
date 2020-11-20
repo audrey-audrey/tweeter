@@ -15,50 +15,46 @@ html {
  */
 
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  font-family: 'Source Sans Pro', sans-serif;
-  color: #545149;
-  font-size: 24px;
+  display         : flex;
+  flex-direction  : column;
+  align-items     : center;
+  font-family     : 'Source Sans Pro', sans-serif;
+  font-size       : 24px;
+  color           : #545149;
   background-color: #f4f7f5;
   background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  /* margin: 0 auto; */
+  display         : flex;
+  flex-direction  : column;
   background-color: #f4f7f5;
   background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 @media only screen and (min-width: 1024px) {
   .header-main {
-    display: flex;
+    display       : flex;
     flex-direction: row;
-    width: 100vw;
+    width         : 100vw;
   }
 
   .profile-header {
     background-color: f4d35e;
-    margin : auto
+    margin          : auto
   }
 
   .avatar {
-    display: flex;
-    justify-content: center;
-    margin-top: 175px;
+    display         : flex;
+    justify-content : center;
+    margin-top      : 175px;
     background-color: f4d35e;
   }
 
   .header-main main {
-    margin-top: 175px;
-    margin-left: 0;
-    margin-right: auto;
+    margin-top    : 175px;
+    margin-left   : 0;
+    margin-right  : auto;
   }
 }
 

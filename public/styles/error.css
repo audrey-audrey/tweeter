@@ -1,16 +1,16 @@
+/* ERROR BOX */
 .error-container {
-  display: none;
-  color: #A52A2A;
-  background-color: #E9967A;
-  font-size: large;
+  display         : none;
+  margin-top      : 10px;
+  color           : #92140c;
+  background-color: #f1f2ee;
+  border-radius   : 5px;
+  border-style    : solid;
+  font-size       : large;
 }
 
+/* ERROR MESSAGE ICON */ 
 .error-container .error{
   margin: 0.5em
 }
 
-/*
-.error-container + ??{
-  display: block;
-}
-*/

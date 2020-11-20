@@ -1,17 +1,17 @@
 #scroll-button {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 0.5em;
-  border: none;
-  outline: none;
-  color: #a40e4c;
+  display   : none;
+  position  : fixed;
+  bottom    : 20px;
+  right     : 0.5em;
+  border    : none;
+  outline   : none;
+  color     : #a40e4c;
   background-color: #f4f7f5;
-  cursor: pointer;
-  font-size: 80px;
+  cursor    : pointer;
+  font-size : 80px;
   border-radius: 80px;
-  padding: 0px;
-  width: 80px;
-  height: 80px;
+  padding   : 0px;
+  width     : 80px;
+  height    : 80px;
   line-height: 80px;
 }
