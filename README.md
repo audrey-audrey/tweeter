@@ -12,7 +12,7 @@ Publishing a tweet! - in Tablet mode
 Character limitation: Tweets cannot be empty of be longer than 140 characters
 !["Character Limit"](https://github.com/audrey-audrey/tweeter/blob/master/documents/char_limit.gif)
 
-How Tweeter would look in desktop mode
+Tweeter in desktop mode
 !["Desktop Mode"](https://github.com/audrey-audrey/tweeter/blob/master/documents/Desktop_Mode.png)
 
 ## Getting Started
