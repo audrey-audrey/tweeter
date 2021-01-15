@@ -1,10 +1,9 @@
 /* HEADER styling - contains avatar and name */
 header.profile-header {
   width           : 100vw;
-  height          : 520px;
   padding-top     : 120px;
   padding-bottom  : 120px;
-  background-color: #4056A1;
+  background-color: #414066;
   background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
 }
 

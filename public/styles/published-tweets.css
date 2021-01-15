@@ -69,6 +69,10 @@ article.tweet:hover .hide {
   color: #48a9a6;
 }
 
+#tweets-container {
+  height: 100vh;
+}
+
 @media only screen and (min-width: 1024px) {
   article.tweet {
     width: 50vw;
