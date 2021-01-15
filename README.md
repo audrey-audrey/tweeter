@@ -7,13 +7,13 @@ This repository is the starter code for the project: Students will fork and clon
 ## Final Product
 
 Publishing a tweet! - in Tablet mode
-!["Example Tweet"](https://github.com/audrey-audrey/tweeter/blob/master/documents/publish_tweet.gif){ width=50% }
+!["Example Tweet"](https://github.com/audrey-audrey/tweeter/blob/master/documents/publish_tweet.gif){width=250px}
 
 Character limitation: Tweets cannot be empty of be longer than 140 characters
-!["Character Limit"](https://github.com/audrey-audrey/tweeter/blob/master/documents/char_limit.gif){ width=50% }
+!["Character Limit"](https://github.com/audrey-audrey/tweeter/blob/master/documents/char_limit.gif){width=250px}
 
 How Tweeter would look in desktop mode
-!["Desktop Mode"](https://github.com/audrey-audrey/tweeter/blob/master/documents/Desktop_Mode.png){ width=50% }
+!["Desktop Mode"](https://github.com/audrey-audrey/tweeter/blob/master/documents/Desktop_Mode.png){width=250px}
 
 ## Getting Started
 
